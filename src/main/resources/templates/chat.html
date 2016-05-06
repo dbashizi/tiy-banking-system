@@ -1,0 +1,40 @@
+<html>
+<body>
+<h1>Let's chat, {{userName}}</h1>
+
+<h2>Enter your message below and hit the send button! </h2>
+<form action="/send-message" method="post">
+    <input type="text" placeholder="Enter your message" name="userMessage"/>
+    <button type="submit">Chat!</button>
+</form>
+
+<form action="/send-command" method="post">
+    <input type="hidden" name="userCommand" value="history"/>
+    <button type="submit">Get History</button>
+</form>
+
+{{#statusMessage}}
+<h3>Status: {{statusMessage}}</h3>
+{{/statusMessage}}
+
+{{^statusMessage}}
+<h3>No status (hint: send a message to see a status)</h3>
+{{/statusMessage}}
+
+<h3>Message History</h3>
+<ul>
+{{#messageHistory}}
+    {{#.}}
+        <li>
+            {{.}}
+        </li>
+    {{/.}}
+{{/messageHistory}}
+</ul>
+
+{{^messageHistory}}
+<h3>No message history (request it)</h3>
+{{/messageHistory}}
+
+</body>
+</html>

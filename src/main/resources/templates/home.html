@@ -1,0 +1,15 @@
+<html>
+<body>
+{{#name}}
+Hello, {{.}}!
+{{/name}}
+
+{{^name}}
+<h2>Enter your login information below please!</h2>
+<form action="/login" method="post">
+    <input type="text" placeholder="Enter your name" name="userName"/>
+    <button type="submit">Login</button>
+</form>
+{{/name}}
+</body>
+</html>

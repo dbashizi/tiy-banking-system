@@ -1,0 +1,20 @@
+<html>
+<body>
+<h1>List of people</h1>
+<ul>
+{{#personList}}
+    {{numOfPeople}}
+    <ul>
+        {{#personArray}}
+        {{#.}}
+        <li>
+            {{name}} is {{age}} years old
+        </li>
+        {{/.}}
+        {{/personArray}}
+    </ul>
+{{/personList}}
+</ul>
+
+</body>
+</html>
