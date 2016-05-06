@@ -36,6 +36,7 @@ public class ChatClientTest {
     @Test
     public void testSendHistoryCommand() throws Exception {
         ChatClient chatClient = new ChatClient();
+        // we can test additional commands later
         String commandForServer = "history";
         ArrayList<String> responseArray = chatClient.sendCommand(commandForServer);
 
@@ -43,7 +44,7 @@ public class ChatClientTest {
         assertNotEquals(responseArray.size(), 0);
         assertNotEquals(responseArray.size(), 1);
 
-        // For convenience, display the items in the history here ... 
+        // For convenience, display the items in the history here ...
         for (String item : responseArray) {
             System.out.println(item);
         }
