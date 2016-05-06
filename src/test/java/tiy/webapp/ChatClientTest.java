@@ -43,6 +43,7 @@ public class ChatClientTest {
         assertNotEquals(responseArray.size(), 0);
         assertNotEquals(responseArray.size(), 1);
 
+        // For convenience, display the items in the history here ... 
         for (String item : responseArray) {
             System.out.println(item);
         }
